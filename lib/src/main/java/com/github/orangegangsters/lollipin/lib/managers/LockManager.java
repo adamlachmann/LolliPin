@@ -5,6 +5,7 @@ import android.content.Context;
 import com.github.orangegangsters.lollipin.lib.PinActivity;
 import com.github.orangegangsters.lollipin.lib.PinCompatActivity;
 import com.github.orangegangsters.lollipin.lib.PinFragmentActivity;
+import com.github.orangegangsters.lollipin.lib.PinLifecycleActivity;
 
 /**
  * Allows to handle the {@link com.github.orangegangsters.lollipin.lib.managers.AppLock} from within
@@ -51,7 +52,9 @@ public class LockManager<T extends AppLockActivity> {
      */
     public boolean isAppLockEnabled() {
         return (mAppLocker != null && (PinActivity.hasListeners() ||
-                PinFragmentActivity.hasListeners() || PinCompatActivity.hasListeners()));
+                                       PinLifecycleActivity.hasListeners() ||
+                                       PinFragmentActivity.hasListeners() ||
+                                       PinCompatActivity.hasListeners()));
     }
 
     /**
