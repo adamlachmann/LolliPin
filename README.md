@@ -6,22 +6,23 @@ LolliPin [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Loll
 
 A Lollipop material design styled android pincode library (API 14+)
 
+### Installation
 
-To include in your project, add this to your build.gradle file:
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
 
+Add the lollipin dependency
 ```
-   //Lollipin
-   compile ('com.github.orangegangsters:lollipin:2.0.0@aar') {
-      transitive = true
-   }
-```
-Starting from version 2.0.0 we will have a different package name:
-
-```
-   //Lollipin
-   compile ('com.github.omadahealth:lollipin:2.0.0@aar') {
-      transitive = true
-   }
+	dependencies {
+		compile 'com.github.User:Repo:Tag'
+	}
 ```
 
 ![Demo](app/src/main/res/raw/github_gif.gif) ![Demo](app/src/main/res/raw/github_gif2.gif)
@@ -48,28 +49,6 @@ without giving the possibility to retrieve it.
 ##### Introducing Fingerprint
 Once the user has enabled the password, he can also use his fingerprint scanner (using Google Api, not Samsung)
 to unlock his device.
-
-========
-### Usage
-
-If you want an example on how to use it, you can find an example app in this repo.
-
-========
-#### Preparing dependencies
-
-We are using a custom version of RippleView that contains a RippleAnimationListener.
-In order to be able to fetch this dependency, you need to add these lines into your main build.gradle file:
-```
-allprojects {
-    repositories {
-        maven{
-            url "https://github.com/omadahealth/omada-nexus/raw/master/release"
-        }
-        jcenter()
-
-    }
-}
-```
 
 ========
 #### Overriding the AppLockActivity
