@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.andexert.library.RippleAnimationListener;
 import com.andexert.library.RippleView;
 import com.github.orangegangsters.lollipin.lib.R;
 import com.github.orangegangsters.lollipin.lib.interfaces.KeyboardButtonClickedListener;
@@ -19,7 +18,7 @@ import com.github.orangegangsters.lollipin.lib.interfaces.KeyboardButtonClickedL
 /**
  * Created by stoyan and oliviergoutay on 1/13/15.
  */
-public class KeyboardButtonView extends RelativeLayout implements RippleAnimationListener {
+public class KeyboardButtonView extends RelativeLayout implements RippleView.OnRippleCompleteListener {
 
     private KeyboardButtonClickedListener mKeyboardButtonClickedListener;
 
@@ -69,7 +68,7 @@ public class KeyboardButtonView extends RelativeLayout implements RippleAnimatio
             }
 
             mRippleView = (RippleView) view.findViewById(R.id.pin_code_keyboard_button_ripple);
-            mRippleView.setRippleAnimationListener(this);
+            mRippleView.setOnRippleCompleteListener(this);
             if (mRippleView != null) {
                 if (!rippleEnabled) {
                     mRippleView.setVisibility(View.INVISIBLE);
@@ -87,7 +86,7 @@ public class KeyboardButtonView extends RelativeLayout implements RippleAnimatio
     }
 
     @Override
-    public void onRippleAnimationEnd() {
+    public void onComplete(RippleView rippleView) {
         if (mKeyboardButtonClickedListener != null) {
             mKeyboardButtonClickedListener.onRippleAnimationEnd();
         }
