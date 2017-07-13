@@ -1,7 +1,7 @@
 LolliPin [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LolliPin-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1425)
 ================
 
-// FORK: Extends LifecycleActivity, update of libs
+// FORK: Extends LifecycleActivity (Android Architecture Components), library update
 
 
 A Lollipop material design styled android pincode library (API 14+)
@@ -21,8 +21,9 @@ Add it in your root build.gradle at the end of repositories:
 Add the lollipin dependency
 ```
 	dependencies {
-		compile 'com.github.User:Repo:Tag'
+	        compile 'com.github.adamlachmann:LolliPin:-SNAPSHOT'
 	}
+
 ```
 
 ![Demo](app/src/main/res/raw/github_gif.gif) ![Demo](app/src/main/res/raw/github_gif2.gif)
